@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css'
 
 // Components
 import { 
-  BackgroundImage1, BackgroundImage2, FooterCon, FooterLink, GradientBackgroundCon, RedSpan
+  BackgroundImage1, BackgroundImage2, FooterCon, FooterLink, GenerateQuoteButtonText, GradientBackgroundCon, QuoteGeneratorCon, QuoteGeneratorInnerCon, GenerateQuoteButton, QuoteGeneratorSubTitle, QuoteGeneratorTitle, RedSpan
 } from '@/components/QuoteGenerator/QuoteGeneratorElements';
 
 // Assets
@@ -27,18 +27,41 @@ export default function Home() {
       {/* Background*/}
       <GradientBackgroundCon>
 
+        {/* Quote Generator Modal Pop-up*/}
+        {/* <QuoteGeneratorModal/> */}
+
+        {/* Quote Generator */}
+        <QuoteGeneratorCon>
+          <QuoteGeneratorInnerCon>
+            <QuoteGeneratorTitle>
+              Daily Inspiration Generator
+            </QuoteGeneratorTitle>
+            <QuoteGeneratorSubTitle>
+              Looking for a splash of inspiration? Generate a quote card with a random inspirational quote provided by <FooterLink href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">ZenQuotes API</FooterLink>.
+            </QuoteGeneratorSubTitle>
+
+            <GenerateQuoteButton>
+              <GenerateQuoteButtonText onClick={null}>
+                Make a Quote
+              </GenerateQuoteButtonText>
+            </GenerateQuoteButton>
+          </QuoteGeneratorInnerCon>
+        </QuoteGeneratorCon>
+
+        {/* Background Images */}
         <BackgroundImage1
           src={CloudsThunder}
           height="300"
-          alt="cloudybackground1"
+          alt="cloudy thunder"
         />
 
         <BackgroundImage2
           src={CloudsSun}
           height="300"
-          alt="cloudybackground1"
+          alt="cloudy sun"
         />
 
+        {/* Footer */}
         <FooterCon>
           <>
             Quotes Generated: {numberOfQuotes}
